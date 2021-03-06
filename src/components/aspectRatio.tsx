@@ -1,5 +1,5 @@
 import React from 'react';
-import { percentage } from 'src/utilities';
+import { percentage } from '@src/utilities';
 
 type AspectRatioType = Readonly<{
   className?: string;

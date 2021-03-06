@@ -1,7 +1,7 @@
 import React from 'react';
 import Img from 'gatsby-image/withIEPolyfill';
-import { useAnyImage } from 'src/hooks';
-import { AspectRatio } from 'src/components';
+import { useAnyImage } from '@src/hooks';
+import { AspectRatio } from '@src/components';
 
 type PictureType = Readonly<{
   relativePath: string;

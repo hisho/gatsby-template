@@ -1,8 +1,8 @@
 import { Link } from 'gatsby';
 import React from 'react';
-import Layout from 'src/layouts';
-import { SEO, Picture } from 'src/components';
-import { useSiteMetaData } from 'src/hooks';
+import Layout from '@src/layouts';
+import { SEO, Picture } from '@src/components';
+import { useSiteMetaData } from '@src/hooks';
 
 type templatePageType = Readonly<{
   children?: never;

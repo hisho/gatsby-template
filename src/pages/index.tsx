@@ -1,8 +1,8 @@
 import { Link } from 'gatsby';
 import React from 'react';
-import Layout from 'src/layouts';
-import { SEO, Picture } from 'src/components';
-import { useVariables, useSiteMetaData } from 'src/hooks';
+import Layout from '@src/layouts';
+import { SEO, Picture } from '@src/components';
+import { useVariables, useSiteMetaData } from '@src/hooks';
 import { Button, Accordion, AccordionSummary, AccordionDetails } from '@material-ui/core';
 import { withStyles, makeStyles, createStyles } from '@material-ui/core/styles';
 import tw, { css, styled } from 'twin.macro';
