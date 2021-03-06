@@ -1,0 +1,42 @@
+{
+  "breakpoints": {
+    "xs": 600,
+    "sm": 769,
+    "md": 1040,
+    "lg": 1286,
+    "xl": 1366
+  },
+  "colors": {
+    "primary": {
+      "white": "#FFFFFF",
+      "black": "#2C2C2C",
+      "pink": "#E08491",
+      "blue": "#3F6DCE",
+      "lightblue": "#F0FAFF"
+    },
+    "secondary": {
+      "blue": "#78B5F0"
+    }
+  },
+  "fontFamily": {
+    "yugothic": [
+      "游ゴシック",
+      "yugothic",
+      "ヒラギノ角ゴ ProN W3",
+      "Hiragino Kaku Gothic ProN",
+      "メイリオ",
+      "meiryo",
+      "ＭＳ Ｐゴシック",
+      "MS PGothic",
+      "robot",
+      "Droid Sans",
+      "sans-serif"
+    ]
+  },
+  "zIndex": {
+    "gnav": 300,
+    "header": 200,
+    "main": 1,
+    "back": -1
+  }
+}
