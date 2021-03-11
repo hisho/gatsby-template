@@ -1,48 +1,39 @@
-<p align="center">
-  <a href="https://www.gatsbyjs.com/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter">
-    <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
-  </a>
-</p>
-<h1 align="center">
-  Gatsby minimal starter
-</h1>
+# GATSBY TEMPLATE
+# NODE VERSION >=12.13.0 AND USE NPM
 
-## 🚀 Quick start
 
-1.  **Create a Gatsby site.**
+## command
 
-    Use the Gatsby CLI to create a new site, specifying the minimal starter.
+### Watch
 
-    ```shell
-    # create a new Gatsby site using the minimal starter
-    npm init gatsby
-    ```
+#### watch when development
 
-2.  **Start developing.**
+```shell script
+$ npm start
+```
 
-    Navigate into your new site’s directory and start it up.
+#### watch when SSG
 
-    ```shell
-    cd my-gatsby-site/
-    npm run develop
-    ```
+```shell script
+$ npm run serve
+```
 
-3.  **Open the code and start customizing!**
+### Build
 
-    Your site is now running at http://localhost:8000!
+#### Build when production
 
-    Edit `src/pages/index.js` to see your site update in real-time!
+### build when SSG
 
-4.  **Learn more**
+```shell script
+$ npm run build
+```
 
-    - [Documentation](https://www.gatsbyjs.com/docs/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+### View Tailwindcss
 
-    - [Tutorials](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+```shell script
+$ npm run view:tailwind
+```
 
-    - [Guides](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+## License
 
-    - [API Reference](https://www.gatsbyjs.com/docs/api-reference/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-    - [Plugin Library](https://www.gatsbyjs.com/plugins?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-    - [Cheat Sheet](https://www.gatsbyjs.com/docs/cheat-sheet/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+[MIT © hisho](./LICENSE)
