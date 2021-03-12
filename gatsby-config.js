@@ -1,12 +1,13 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 const path = require('path');
 
 module.exports = {
   siteMetadata: {
-    name: "サイトのタイトル",
-    description: "サイトの説明文",
-    lang: "ja",
-    siteUrl: "https://example.com/",
-    locale: "ja_JP",
+    name: 'サイトのタイトル',
+    description: 'サイトの説明文',
+    lang: 'ja',
+    siteUrl: 'https://example.com/',
+    locale: 'ja_JP',
   },
   polyfill: false,
   plugins: [
@@ -17,25 +18,25 @@ module.exports = {
         '@src': path.join(__dirname, `src`),
       },
     },
-    "gatsby-plugin-postcss",
-    "gatsby-plugin-image",
+    'gatsby-plugin-postcss',
+    'gatsby-plugin-image',
     {
-      resolve: "gatsby-plugin-google-analytics",
+      resolve: 'gatsby-plugin-google-analytics',
       options: {
-        trackingId: "11",
+        trackingId: '11',
       },
     },
-    "gatsby-plugin-react-helmet",
-    "gatsby-plugin-sitemap",
-    "gatsby-plugin-sharp",
-    "gatsby-transformer-sharp",
+    'gatsby-plugin-react-helmet',
+    'gatsby-plugin-sitemap',
+    'gatsby-plugin-sharp',
+    'gatsby-transformer-sharp',
     {
-      resolve: "gatsby-source-filesystem",
+      resolve: 'gatsby-source-filesystem',
       options: {
-        name: "images",
-        path: "./src/images/",
+        name: 'images',
+        path: './src/images/',
       },
-      __key: "images",
+      __key: 'images',
     },
   ],
 };
