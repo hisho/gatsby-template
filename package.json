@@ -8,15 +8,17 @@
   },
   "scripts": {
     "preinstall": "npx check-engines && npx only-allow npm",
-    "start": "run-p gatsby:start watch:type-check",
-    "build": "run-s build:type-check gatsby:clean gatsby:build",
+    "start": "run-p gatsby:start watch:type-check watch:typed-css",
+    "build": "run-s build:type-check build:typed-css gatsby:clean gatsby:build",
     "serve": "run-s build gatsby:serve",
     "gatsby:start": "gatsby develop -o -H 0.0.0.0",
     "gatsby:build": "gatsby build",
     "gatsby:serve": "gatsby serve -o -H 0.0.0.0",
     "gatsby:clean": "gatsby clean",
     "build:type-check": "tsc --noEmit",
-    "watch:type-check": "tsc --noEmit -w"
+    "watch:type-check": "tsc --noEmit -w",
+    "build:typed-css": "tcm -c -p \"src/**/*.module.css\" .",
+    "watch:typed-css": "tcm -c -p \"src/**/*.module.css\" . -w"
   },
   "dependencies": {
     "gatsby": "^3.0.1",
@@ -47,6 +49,7 @@
     "postcss": "^8.2.6",
     "postcss-import": "^14.0.0",
     "postcss-nested": "^5.0.5",
+    "typed-css-modules": "^0.6.5",
     "typescript": "^4.2.3"
   }
 }
