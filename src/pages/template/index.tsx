@@ -1,11 +1,11 @@
-import React from "react";
-import {Layout, SEO} from "@src/layouts";
-import * as styles from "@src/pages/template/index.module.css";
+import React, { FCP } from 'react';
+import { Layout, SEO } from '@src/layouts';
+import * as styles from '@src/pages/template/index.module.css';
 
-const IndexPage = () => {
+const IndexPage: FCP = () => {
   return (
     <Layout>
-      <SEO/>
+      <SEO />
       <div className="wrapper">
         <section>
           <h2 className={styles.test}>css modules</h2>
@@ -13,7 +13,7 @@ const IndexPage = () => {
         </section>
       </div>
     </Layout>
-  )
-}
+  );
+};
 
-export default IndexPage
+export default IndexPage;
