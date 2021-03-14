@@ -2,6 +2,7 @@ import React, {FCX} from 'react';
 import {graphql, useStaticQuery} from 'gatsby';
 import {GatsbyImage, IGatsbyImageData, withArtDirection} from 'gatsby-plugin-image';
 import {AspectRatio} from "@src/components";
+import * as styles from "@src/components/Picture/picture.module.css";
 
 type PicturePropsType = {
   relativePath: string;
@@ -107,7 +108,7 @@ export const Picture: FCX<PicturePropsType> = ({relativePath}) => {
       {currentMobileImage && <AspectRatio className="block md:hidden" width={currentMobileImage.childImageSharp.gatsbyImageData.width} height={currentMobileImage.childImageSharp.gatsbyImageData.height}/>}
       <AspectRatio className="hidden md:block" width={currentDesktopImage.childImageSharp.gatsbyImageData.width} height={currentDesktopImage.childImageSharp.gatsbyImageData.height}/>
       <GatsbyImage
-        className="absolute inset-0"
+        className={styles.gatsbyImageWrapper}
         image={images}
         alt=""
       />
