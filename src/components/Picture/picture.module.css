@@ -1,0 +1,13 @@
+.gatsby-image-wrapper:not(#id) {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.gatsby-image-wrapper:not(#id) [aria-hidden="true"][style*="padding-top"] {
+  display: none;
+}
