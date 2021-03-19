@@ -1,1 +1,1 @@
-export {Picture} from "@src/components/Picture/Picture";
+export { Picture } from '@src/components/Picture/Picture';

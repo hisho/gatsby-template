@@ -1,4 +1,4 @@
-import {graphql, useStaticQuery} from "gatsby";
+import { graphql, useStaticQuery } from 'gatsby';
 
 export type SEOSiteMetaData = {
   site: {
@@ -28,4 +28,4 @@ export const useSiteMetaData = () => {
   `);
 
   return data.site.siteMetadata;
-}
+};

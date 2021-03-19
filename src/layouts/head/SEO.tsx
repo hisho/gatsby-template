@@ -1,13 +1,13 @@
 import React, { FC } from 'react';
 import { Helmet } from 'react-helmet';
-import {pageDataType} from "@src/types/page";
-import {useSEO} from "@src/hooks/useSEO";
+import { pageDataType } from '@src/types/page';
+import { useSEO } from '@src/hooks/useSEO';
 
 type SEOPropsType = {
-  currentPageData: pageDataType
+  currentPageData: pageDataType;
 };
 
-export const SEO: FC<SEOPropsType> = ({currentPageData}) => {
+export const SEO: FC<SEOPropsType> = ({ currentPageData }) => {
   const SEO = useSEO(currentPageData);
 
   return (

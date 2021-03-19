@@ -1,1 +1,1 @@
-export {AspectRatio} from "@src/components/AspectRatio/AspectRatio";
+export { AspectRatio } from '@src/components/AspectRatio/AspectRatio';

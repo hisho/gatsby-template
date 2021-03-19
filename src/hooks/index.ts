@@ -1,1 +1,1 @@
-export {useSiteMetaData} from "@src/hooks/useSiteMetaData";
+export { useSiteMetaData } from '@src/hooks/useSiteMetaData';

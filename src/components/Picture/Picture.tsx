@@ -1,8 +1,12 @@
-import React, {FCX} from 'react';
-import {graphql, useStaticQuery} from 'gatsby';
-import {GatsbyImage, IGatsbyImageData, withArtDirection} from 'gatsby-plugin-image';
-import {AspectRatio} from "@src/components";
-import * as styles from "@src/components/Picture/picture.module.css";
+import React, { FCX } from 'react';
+import { graphql, useStaticQuery } from 'gatsby';
+import {
+  GatsbyImage,
+  IGatsbyImageData,
+  withArtDirection,
+} from 'gatsby-plugin-image';
+import { AspectRatio } from '@src/components';
+import * as styles from '@src/components/Picture/picture.module.css';
 
 type PicturePropsType = {
   relativePath: string;
@@ -17,10 +21,10 @@ type PictureQueryType = {
   }[];
 };
 
-export const Picture: FCX<PicturePropsType> = ({relativePath}) => {
-  const {desktopImages, mobileImages} = useStaticQuery<{
+export const Picture: FCX<PicturePropsType> = ({ relativePath }) => {
+  const { desktopImages, mobileImages } = useStaticQuery<{
     desktopImages: PictureQueryType;
-    mobileImages: PictureQueryType
+    mobileImages: PictureQueryType;
   }>(graphql`
     query AllImages {
       desktopImages: allFile(
@@ -40,7 +44,7 @@ export const Picture: FCX<PicturePropsType> = ({relativePath}) => {
             )
           }
         }
-      },
+      }
       mobileImages: allFile(
         filter: {
           sourceInstanceName: { eq: "images" }
@@ -74,25 +78,29 @@ export const Picture: FCX<PicturePropsType> = ({relativePath}) => {
     return n.relativePath.replace(/sp_/, '') === relativePath;
   });
 
-
-  function test({desktopImage, mobileImage}: {
+  function test({
+    desktopImage,
+    mobileImage,
+  }: {
     desktopImage: {
       relativePath: string;
       childImageSharp: {
         gatsbyImageData: IGatsbyImageData;
-      }
-    },
-    mobileImage: {
-      relativePath: string;
-      childImageSharp: {
-        gatsbyImageData: IGatsbyImageData;
-      }
-    } | undefined,
+      };
+    };
+    mobileImage:
+      | {
+          relativePath: string;
+          childImageSharp: {
+            gatsbyImageData: IGatsbyImageData;
+          };
+        }
+      | undefined;
   }) {
     if (desktopImage && mobileImage) {
       return withArtDirection(mobileImage.childImageSharp.gatsbyImageData, [
         {
-          media: "(min-width: 768px)",
+          media: '(min-width: 768px)',
           image: desktopImage.childImageSharp.gatsbyImageData,
         },
       ]);
@@ -101,12 +109,25 @@ export const Picture: FCX<PicturePropsType> = ({relativePath}) => {
     }
   }
 
-  const images = test({desktopImage: currentDesktopImage, mobileImage: currentMobileImage});
+  const images = test({
+    desktopImage: currentDesktopImage,
+    mobileImage: currentMobileImage,
+  });
 
   return (
     <div className="relative">
-      {currentMobileImage && <AspectRatio className="block md:hidden" width={currentMobileImage.childImageSharp.gatsbyImageData.width} height={currentMobileImage.childImageSharp.gatsbyImageData.height}/>}
-      <AspectRatio className="hidden md:block" width={currentDesktopImage.childImageSharp.gatsbyImageData.width} height={currentDesktopImage.childImageSharp.gatsbyImageData.height}/>
+      {currentMobileImage && (
+        <AspectRatio
+          className="block md:hidden"
+          width={currentMobileImage.childImageSharp.gatsbyImageData.width}
+          height={currentMobileImage.childImageSharp.gatsbyImageData.height}
+        />
+      )}
+      <AspectRatio
+        className="hidden md:block"
+        width={currentDesktopImage.childImageSharp.gatsbyImageData.width}
+        height={currentDesktopImage.childImageSharp.gatsbyImageData.height}
+      />
       <GatsbyImage
         className={styles.gatsbyImageWrapper}
         image={images}
