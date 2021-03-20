@@ -1,14 +1,14 @@
-import React, {FCP,useReducer} from 'react';
+import React, {FCP} from 'react';
 import {Layout, SEO} from '@src/layouts';
 import {Picture} from '@src/components';
-import {usePage} from '@src/hooks/usePage';
-import {PageContext, PageContextReducer} from "@src/store";
+import {PageContext} from "@src/store";
+import {usePageReducer} from "@src/hooks";
 
 const IndexPage: FCP = () => {
-  const [page, dispatch] = useReducer(PageContextReducer, usePage('1'));
+  const currentPage = usePageReducer('1');
 
   return (
-    <PageContext.Provider value={{page, dispatch}}>
+    <PageContext.Provider value={currentPage}>
       <Layout>
         <SEO/>
         <h1 className="text-4xl">index.page</h1>

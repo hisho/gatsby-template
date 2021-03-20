@@ -9,6 +9,7 @@ export const SEO: FC<SEOPropsType> = () => {
   const {page} = useContext(PageContext);
   const SEO = useSEO(page);
 
+  console.log(page);
   return (
     <>
       <Helmet>

@@ -7,8 +7,8 @@ export const PageContextReducer: Reducer<
   PageContextAction
 > = (prevState, action) => {
   switch (action.type) {
-    case 'increment':
-      return { ...prevState, path: prevState.path + action.payload };
+    case 'path':
+      return { ...prevState, path: action.payload };
     default:
       return prevState;
   }

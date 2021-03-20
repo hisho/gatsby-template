@@ -1,16 +1,16 @@
-import React, {FCP, useReducer} from 'react';
+import React, {FCP} from 'react';
 import {Layout, SEO} from '@src/layouts';
 import * as styles from '@src/pages/template/index.module.css';
 import {GatsbyImage, StaticImage} from 'gatsby-plugin-image';
 import {graphql, useStaticQuery} from 'gatsby';
-import {usePage} from '@src/hooks/usePage';
-import {PageContext, PageContextReducer} from "@src/store";
+import {PageContext} from "@src/store";
+import {usePageReducer} from "@src/hooks";
 
 const IndexPage: FCP = () => {
-  const [page, dispatch] = useReducer(PageContextReducer, usePage('111111'));
+  const currentPage = usePageReducer('111111');
 
   return (
-    <PageContext.Provider value={{page, dispatch}}>
+    <PageContext.Provider value={currentPage}>
       <Layout>
         <SEO/>
         <div className="wrapper">
