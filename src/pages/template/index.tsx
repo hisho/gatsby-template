@@ -1,10 +1,10 @@
-import React, {FCP} from 'react';
-import {Layout, SEO} from '@src/layouts';
+import React, { FCP } from 'react';
+import { Layout, SEO } from '@src/layouts';
 import * as styles from '@src/pages/template/index.module.css';
-import {GatsbyImage, StaticImage} from 'gatsby-plugin-image';
-import {graphql, useStaticQuery} from 'gatsby';
-import {PageContext} from "@src/store";
-import {usePageReducer} from "@src/hooks";
+import { GatsbyImage, StaticImage } from 'gatsby-plugin-image';
+import { graphql, useStaticQuery } from 'gatsby';
+import { PageContext } from '@src/store';
+import { usePageReducer } from '@src/hooks';
 
 const IndexPage: FCP = () => {
   const currentPage = usePageReducer('111111');
@@ -12,7 +12,7 @@ const IndexPage: FCP = () => {
   return (
     <PageContext.Provider value={currentPage}>
       <Layout>
-        <SEO/>
+        <SEO />
         <div className="wrapper">
           <section>
             <h2 className={styles.test}>css modules</h2>
