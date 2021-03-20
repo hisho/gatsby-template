@@ -1,18 +1,20 @@
 import { graphql, useStaticQuery } from 'gatsby';
 
+export type siteMetadataType = {
+  description: string;
+  lang: string;
+  name: string;
+  siteUrl: string;
+  locale: string;
+};
+
 export type SEOSiteMetaData = {
   site: {
-    siteMetadata: {
-      description: string;
-      lang: string;
-      name: string;
-      siteUrl: string;
-      locale: string;
-    };
+    siteMetadata: siteMetadataType;
   };
 };
 
-export const useSiteMetaData = () => {
+export const useSiteMetaData = (): siteMetadataType => {
   const data: SEOSiteMetaData = useStaticQuery(graphql`
     query SEO {
       site {
