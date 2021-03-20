@@ -8,15 +8,15 @@ export const pages: pageDataType[] = [
     page_id: '999999',
     title: '404 not found',
     path: '/404/',
-    parent_id: '1'
+    parent_id: '1',
   },
   {
     page_id: '111111',
     title: 'テンプレート',
     description: 'テンプレートページの説明文',
     path: '/template/',
-    parent_id: '1'
-  }
+    parent_id: '1',
+  },
 ];
 
 export type pageDataType = {
