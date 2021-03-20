@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import { Helmet } from 'react-helmet';
-import { pageDataType } from '@src/types/page';
+import { pageDataType } from '@src/configs';
 import { useSEO } from '@src/hooks/useSEO';
 
 type SEOPropsType = {

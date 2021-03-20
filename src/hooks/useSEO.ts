@@ -1,5 +1,5 @@
 import { useSiteMetaData } from '@src/hooks/useSiteMetaData';
-import { pageDataType } from '@src/types/page';
+import { pageDataType } from '@src/configs';
 import { graphql, useStaticQuery } from 'gatsby';
 import { IGatsbyImageData, getSrc } from 'gatsby-plugin-image';
 
