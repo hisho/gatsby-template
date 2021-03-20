@@ -1,16 +1,18 @@
-import React, { FCP } from 'react';
-import { Layout, SEO } from '@src/layouts';
-import { usePage } from '@src/hooks/usePage';
+import React, {FCP, useReducer} from 'react';
+import {Layout, SEO} from '@src/layouts';
+import {usePage} from '@src/hooks/usePage';
+import {PageContext, PageContextReducer} from "@src/store";
 
-const IndexPage: FCP = ({ path }) => {
-  const page = usePage('999999');
-  page.path = path;
+const IndexPage: FCP = () => {
+  const [page, dispatch] = useReducer(PageContextReducer, usePage('999999'));
 
   return (
-    <Layout>
-      <SEO currentPageData={page} />
-      <h1 className="text-4xl">index.page</h1>
-    </Layout>
+    <PageContext.Provider value={{page, dispatch}}>
+      <Layout>
+        <SEO/>
+        <h1 className="text-4xl">index.page</h1>
+      </Layout>
+    </PageContext.Provider>
   );
 };
 
