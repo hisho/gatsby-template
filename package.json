@@ -22,6 +22,7 @@
     "watch:typed-css": "tcm -c -p \"src/**/*.module.css\" . -w"
   },
   "dependencies": {
+    "@material-ui/core": "^4.11.3",
     "gatsby": "^3.0.1",
     "gatsby-plugin-google-analytics": "^3.0.0",
     "gatsby-plugin-image": "^1.0.1",
