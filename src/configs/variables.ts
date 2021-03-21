@@ -18,4 +18,4 @@ export const variables = {
     notosans: ["Noto Sans JP", "sans-serif"],
     notoserif: ["Noto Serif JP", "serif"]
   },
-}
+} as const;
