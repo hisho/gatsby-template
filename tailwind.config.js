@@ -1,5 +1,28 @@
 // eslint-disable-next-line @typescript-eslint/no-var-requires
+require('ts-node').register({
+  compilerOptions: {
+    module: 'commonjs',
+    target: 'esnext',
+  },
+})
+
+const {variables} = require('./src/configs/variables');
 const plugin = require('tailwindcss/plugin');
+const {colors} = require('tailwindcss/defaultTheme');
+const _ = require('lodash');
+
+function customizeObject($object, $func) {
+  return Object.fromEntries(
+    Object.entries($object).map(([key, value]) => $func(key, value))
+  );
+}
+
+function rangeObject(start, end, step) {
+  return _.range(start, end, step).reduce((obj, item) => {
+    obj[item] = item;
+    return obj;
+  }, {});
+}
 
 module.exports = {
   purge: {
@@ -12,12 +35,33 @@ module.exports = {
   important: true,
   darkMode: false, // or 'media' or 'class'
   theme: {
+    screens: customizeObject(variables.breakpoints, (key, value) => [key, `${value / 16}em`]),
+    fontFamily: variables.fontFamily,
+    fontSize: customizeObject(rangeObject(10, 81, 1), (key, value) => [key, `${+value / 16}rem`,]),
+    lineHeight: customizeObject(rangeObject(100, 201, 5), (key, value) => [key / 100, value / 100]),
     extend: {
+      spacing: customizeObject(rangeObject(0, 211), (key, value) => [key / 2, `${value * 2 / 16}rem`]),
+      maxWidth: {
+        ...customizeObject(rangeObject(0, 1201, 4), (key, value) => [key, `${+value / 16}rem`]),
+        ...customizeObject(variables.breakpoints, (key, value) => [`screen-${key}`, `${value}px`])
+      },
       transitionDuration: {
         DEFAULT: '300ms',
       },
       transitionTimingFunction: {
         DEFAULT: 'cubic-bezier(0, 0, 0.2, 1)',
+      },
+      colors: {
+        ...colors,
+        ...variables.colors,
+      },
+      borderColor: {
+        ...colors,
+        ...variables.colors,
+      },
+      fill: {
+        ...colors,
+        ...variables.colors,
       },
     },
   },
@@ -74,6 +118,9 @@ module.exports = {
           marginLeft: `auto`,
           marginRight: `auto`,
         },
+        ':root': {
+          ...customizeObject(variables.breakpoints, (key, value) => [`--breakpoint-${key}`, String(value)])
+        }
       };
       addComponents(newComponents);
     }),
