@@ -9,7 +9,6 @@
   border: none;
 }
 
-
 *,
 ::after,
 ::before {
@@ -39,7 +38,6 @@ a {
   text-decoration: none;
 }
 
-
 a object {
   pointer-events: none;
 }
@@ -52,6 +50,10 @@ svg {
   overflow: hidden;
 }
 
+svg:not(fill), svg:not(stroke) {
+  fill: currentColor;
+}
+
 img, svg, video, canvas {
   height: auto;
 }
@@ -60,7 +62,7 @@ img, svg, video, canvas, audio, iframe, embed, object {
   display: block;
 }
 
-ul,ol {
+ul, ol {
   list-style-type: none;
 }
 
@@ -73,7 +75,7 @@ table {
   border-collapse: collapse;
 }
 
-address,em {
+address, em {
   font-style: normal;
 }
 
@@ -112,7 +114,7 @@ textarea {
   background-color: transparent;
 }
 
-button{
+button {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -127,9 +129,9 @@ button{
 }
 
 @media (prefers-reduced-motion: reduce) {
-  *,
-  ::before,
-  ::after {
+  *:not(#id),
+  :not(#id)::before,
+  :not(#id)::after {
     transition-delay: 0s !important;
     transition-duration: 1ms !important;
     animation-duration: 1ms !important;
