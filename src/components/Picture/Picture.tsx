@@ -12,13 +12,15 @@ type PicturePropsType = {
   relativePath: string;
 };
 
+export type anyImageQueryType = {
+  relativePath: string;
+  childImageSharp: {
+    gatsbyImageData: IGatsbyImageData;
+  };
+};
+
 type PictureQueryType = {
-  nodes: {
-    relativePath: string;
-    childImageSharp: {
-      gatsbyImageData: IGatsbyImageData;
-    };
-  }[];
+  nodes: anyImageQueryType[];
 };
 
 export const Picture: FCX<PicturePropsType> = ({ relativePath }) => {
@@ -75,7 +77,7 @@ export const Picture: FCX<PicturePropsType> = ({ relativePath }) => {
   }
 
   const currentMobileImage = mobileImages.nodes.find((n) => {
-    return n.relativePath.replace(/sp_/, '') === relativePath;
+    return n.relativePath.replace(/sp_.+\.(png|jpe?g)$/, '') === relativePath;
   });
 
   function test({

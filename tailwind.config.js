@@ -4,11 +4,11 @@ require('ts-node').register({
     module: 'commonjs',
     target: 'esnext',
   },
-})
+});
 
-const {variables} = require('./src/configs/variables');
+const { variables } = require('./src/configs/variables');
 const plugin = require('tailwindcss/plugin');
-const {colors} = require('tailwindcss/defaultTheme');
+const { colors } = require('tailwindcss/defaultTheme');
 const _ = require('lodash');
 
 function customizeObject($object, $func) {
@@ -35,15 +35,33 @@ module.exports = {
   important: true,
   darkMode: false, // or 'media' or 'class'
   theme: {
-    screens: customizeObject(variables.breakpoints, (key, value) => [key, `${value / 16}em`]),
+    screens: customizeObject(variables.breakpoints, (key, value) => [
+      key,
+      `${value / 16}em`,
+    ]),
     fontFamily: variables.fontFamily,
-    fontSize: customizeObject(rangeObject(10, 81, 1), (key, value) => [key, `${+value / 16}rem`,]),
-    lineHeight: customizeObject(rangeObject(100, 201, 5), (key, value) => [key / 100, value / 100]),
+    fontSize: customizeObject(rangeObject(10, 81, 1), (key, value) => [
+      key,
+      `${+value / 16}rem`,
+    ]),
+    lineHeight: customizeObject(rangeObject(100, 201, 5), (key, value) => [
+      key / 100,
+      value / 100,
+    ]),
     extend: {
-      spacing: customizeObject(rangeObject(0, 211), (key, value) => [key / 2, `${value * 2 / 16}rem`]),
+      spacing: customizeObject(rangeObject(0, 211), (key, value) => [
+        key / 2,
+        `${(value * 2) / 16}rem`,
+      ]),
       maxWidth: {
-        ...customizeObject(rangeObject(0, 1201, 4), (key, value) => [key, `${+value / 16}rem`]),
-        ...customizeObject(variables.breakpoints, (key, value) => [`screen-${key}`, `${value}px`])
+        ...customizeObject(rangeObject(0, 1201, 4), (key, value) => [
+          key,
+          `${+value / 16}rem`,
+        ]),
+        ...customizeObject(variables.breakpoints, (key, value) => [
+          `screen-${key}`,
+          `${value}px`,
+        ]),
       },
       transitionDuration: {
         DEFAULT: '300ms',
@@ -119,8 +137,11 @@ module.exports = {
           marginRight: `auto`,
         },
         ':root': {
-          ...customizeObject(variables.breakpoints, (key, value) => [`--breakpoint-${key}`, String(value)])
-        }
+          ...customizeObject(variables.breakpoints, (key, value) => [
+            `--breakpoint-${key}`,
+            String(value),
+          ]),
+        },
       };
       addComponents(newComponents);
     }),

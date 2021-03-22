@@ -1,1 +1,1 @@
-export {percentage} from "@src/helper/percentage";
+export { percentage } from '@src/helper/percentage';

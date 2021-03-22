@@ -4,18 +4,18 @@ export const variables = {
     sm: 769,
     md: 1000,
     lg: 1200,
-    xl: 1366
+    xl: 1366,
   },
   colors: {
     primary: {
-      black: "#1a202c",
+      black: '#1a202c',
     },
     secondary: {
-      black: "#032142"
-    }
+      black: '#032142',
+    },
   },
   fontFamily: {
-    notosans: ["Noto Sans JP", "sans-serif"],
-    notoserif: ["Noto Serif JP", "serif"]
+    notosans: ['Noto Sans JP', 'sans-serif'],
+    notoserif: ['Noto Serif JP', 'serif'],
   },
 } as const;
