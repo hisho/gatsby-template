@@ -1,4 +1,4 @@
-import { useSiteMetaData } from '@src/hooks/useSiteMetaData';
+import { useSiteMeta } from '@src/hooks/useSiteMeta';
 import { pageDataType } from '@src/configs';
 import { graphql, useStaticQuery } from 'gatsby';
 import { IGatsbyImageData, getSrc } from 'gatsby-plugin-image';
@@ -63,7 +63,7 @@ export const useSEO: useSEOFunctionType = ({
     throw new Error(`${image} does not exist`);
   }
 
-  const siteMetaData = useSiteMetaData();
+  const siteMetaData = useSiteMeta();
   const isTopPage = page_id === '1';
   const pageTitle = isTopPage
     ? siteMetaData.name

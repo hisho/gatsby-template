@@ -1,11 +1,4 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
-require('ts-node').register({
-  compilerOptions: {
-    module: 'commonjs',
-    target: 'esnext',
-  },
-});
-
 const { variables } = require('./src/configs/variables');
 const plugin = require('tailwindcss/plugin');
 const { colors } = require('tailwindcss/defaultTheme');

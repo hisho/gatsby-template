@@ -1,14 +1,16 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
+require('ts-node').register({
+  compilerOptions: {
+    module: 'commonjs',
+    target: 'esnext',
+  },
+});
+const {siteMeta} = require('./src/configs/siteMeta');
 const path = require('path');
+/* eslint-disable @typescript-eslint/no-var-requires */
 
 module.exports = {
-  siteMetadata: {
-    name: 'サイトのタイトル',
-    description: 'サイトの説明文',
-    lang: 'ja',
-    siteUrl: 'https://example.com/',
-    locale: 'ja_JP',
-  },
+  siteMetadata: siteMeta,
   polyfill: false,
   plugins: [
     // 'gatsby-plugin-remove-generator', //remove <meta name="generator" content="Gatsby">
