@@ -1,4 +1,4 @@
-// eslint-disable-next-line @typescript-eslint/no-var-requires
+/* eslint-disable @typescript-eslint/no-var-requires */
 require('ts-node').register({
   compilerOptions: {
     module: 'commonjs',
@@ -10,6 +10,7 @@ const { variables } = require('./src/configs/variables');
 const plugin = require('tailwindcss/plugin');
 const { colors } = require('tailwindcss/defaultTheme');
 const _ = require('lodash');
+/* eslint-disable @typescript-eslint/no-var-requires */
 
 function customizeObject($object, $func) {
   return Object.fromEntries(
