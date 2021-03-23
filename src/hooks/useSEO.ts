@@ -44,10 +44,8 @@ export const useSEO: useSEOFunctionType = ({
           relativePath
           childImageSharp {
             gatsbyImageData(
-              height: 630
               layout: FIXED
               aspectRatio: 1.9047619047619047
-              width: 1200
             )
           }
         }
