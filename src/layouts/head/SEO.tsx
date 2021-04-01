@@ -4,14 +4,12 @@ import { useSEO } from '@src/hooks/useSEO';
 import { PageContext } from '@src/store';
 
 type SEOPropsType = {
-  children?: never;
+  children?: React.ReactNode;
 };
 
-export const SEO: FC<SEOPropsType> = () => {
+export const SEO: FC<SEOPropsType> = ({ children }) => {
   const { page } = useContext(PageContext);
   const SEO = useSEO(page);
-
-  console.log(page);
   return (
     <>
       <Helmet>
@@ -28,6 +26,7 @@ export const SEO: FC<SEOPropsType> = () => {
         <meta property="og:title" content={SEO.title} />
         <meta property="og:description" content={SEO.description} />
         <meta property="og:image" content={SEO.image} />
+        {children}
       </Helmet>
     </>
   );

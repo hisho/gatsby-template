@@ -4,4 +4,4 @@ export const siteMeta = {
   lang: 'ja',
   siteUrl: 'https://example.com',
   locale: 'ja_JP',
-} as const
+} as const;

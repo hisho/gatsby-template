@@ -1,19 +1,17 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
-require('ts-node').register({
-  compilerOptions: {
-    module: 'commonjs',
-    target: 'esnext',
-  },
-});
-const {siteMeta} = require('./src/configs/siteMeta');
 const path = require('path');
 /* eslint-disable @typescript-eslint/no-var-requires */
 
 module.exports = {
-  siteMetadata: siteMeta,
+  siteMetadata: {
+    siteUrl: 'https://localhost:3000',
+  },
   polyfill: false,
   plugins: [
-    // 'gatsby-plugin-remove-generator', //remove <meta name="generator" content="Gatsby">
+    'gatsby-plugin-remove-generator', //remove <meta name="generator" content="Gatsby">
+    {
+      resolve: 'gatsby-plugin-no-sourcemaps',
+    },
     {
       resolve: `gatsby-plugin-root-import`,
       options: {
@@ -23,9 +21,12 @@ module.exports = {
     'gatsby-plugin-postcss',
     'gatsby-plugin-image',
     {
-      resolve: 'gatsby-plugin-google-analytics',
+      resolve: `gatsby-plugin-google-gtag`,
       options: {
-        trackingId: '11',
+        trackingIds: ['G-LR5XFN93CN'],
+        pluginConfig: {
+          head: true,
+        },
       },
     },
     'gatsby-plugin-react-helmet',

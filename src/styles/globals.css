@@ -1,4 +1,21 @@
 @import "reset.css";
+@import "tailwind.css";
 
-@tailwind components;
-@tailwind utilities;
+body {
+  @apply font-notoserif;
+  @apply text-primary-black;
+  @apply font-normal;
+  @apply tracking-wider;
+}
+
+.hover\:primary {
+  transition: opacity .5s ease-out;
+  &:focus {
+    opacity: .5;
+  }
+  @media (hover: hover) {
+    &:hover {
+      opacity: .5;
+    }
+  }
+}

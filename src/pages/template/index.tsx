@@ -1,8 +1,7 @@
 import React, { FCP } from 'react';
 import { Layout, SEO } from '@src/layouts';
 import * as styles from '@src/pages/template/index.module.css';
-import { GatsbyImage, StaticImage } from 'gatsby-plugin-image';
-import { graphql, useStaticQuery } from 'gatsby';
+import { StaticImage } from 'gatsby-plugin-image';
 import { PageContext } from '@src/store';
 import { usePageReducer } from '@src/hooks';
 import {
@@ -33,9 +32,9 @@ const IndexPage: FCP = () => {
             <h2 className={styles.testTest}>css modules kebab to camelcase</h2>
             <StaticImage
               aspectRatio={1200 / 630}
-              src="../../images/screenshot.png"
+              src="../../images/common/ogp.jpg"
               alt=""
-              formats={['auto', 'webp', 'avif']}
+              formats={['auto', 'webp']}
             />
           </section>
         </div>

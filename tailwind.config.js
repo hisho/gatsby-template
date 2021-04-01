@@ -1,4 +1,10 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
+require('ts-node').register({
+  compilerOptions: {
+    module: 'commonjs',
+    target: 'esnext',
+  },
+});
 const { variables } = require('./src/configs/variables');
 const plugin = require('tailwindcss/plugin');
 const { colors } = require('tailwindcss/defaultTheme');
@@ -17,6 +23,14 @@ function rangeObject(start, end, step) {
     return obj;
   }, {});
 }
+
+const colorList = Object.fromEntries(
+  Object.entries(variables.colors).flatMap(([key, value]) => {
+    return Object.entries(value).map(([deepKey, deepValue]) => {
+      return [`--color-${key}-${deepKey}`, deepValue];
+    });
+  })
+);
 
 module.exports = {
   purge: {
@@ -43,6 +57,9 @@ module.exports = {
       value / 100,
     ]),
     extend: {
+      gridTemplateColumns: {
+        auto: 'auto 1fr',
+      },
       spacing: customizeObject(rangeObject(0, 211), (key, value) => [
         key / 2,
         `${(value * 2) / 16}rem`,
@@ -107,10 +124,10 @@ module.exports = {
       addUtilities(newUtilities, ['responsive']);
     }),
     plugin(({ addComponents }) => {
-      const wrapperWidth = 1000 / 16;
-      const containerWidth = 960 / 16;
+      const wrapperWidth = variables.breakpoints.md / 16;
+      // const containerWidth = 960 / 16;
       const desktopWrapperPadding = 40 / 16;
-      const mobileWrapperPadding = 24 / 16;
+      const mobileWrapperPadding = 28 / 16;
       const newComponents = {
         '.wrapper': {
           maxWidth: `${wrapperWidth + desktopWrapperPadding * 2}rem`,
@@ -124,17 +141,38 @@ module.exports = {
             paddingRight: `${desktopWrapperPadding}rem`,
           },
         },
-        '.container': {
-          maxWidth: `${containerWidth}rem`,
-          width: `100%`,
-          marginLeft: `auto`,
-          marginRight: `auto`,
+        '.wrapper-pr': {
+          paddingRight: `${mobileWrapperPadding}rem`,
+          '@screen sm': {
+            paddingRight: `${desktopWrapperPadding}rem`,
+          },
         },
+        '.wrapper-pl': {
+          paddingLeft: `${mobileWrapperPadding}rem`,
+          '@screen sm': {
+            paddingLeft: `${desktopWrapperPadding}rem`,
+          },
+        },
+        '.wrapper-px': {
+          paddingLeft: `${mobileWrapperPadding}rem`,
+          paddingRight: `${mobileWrapperPadding}rem`,
+          '@screen sm': {
+            paddingLeft: `${desktopWrapperPadding}rem`,
+            paddingRight: `${desktopWrapperPadding}rem`,
+          },
+        },
+        // '.container': {
+        //   maxWidth: `${containerWidth}rem`,
+        //   width: `100%`,
+        //   marginLeft: `auto`,
+        //   marginRight: `auto`,
+        // },
         ':root': {
           ...customizeObject(variables.breakpoints, (key, value) => [
             `--breakpoint-${key}`,
             String(value),
           ]),
+          ...colorList,
         },
       };
       addComponents(newComponents);

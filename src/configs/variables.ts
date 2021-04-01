@@ -8,10 +8,15 @@ export const variables = {
   },
   colors: {
     primary: {
-      black: '#1a202c',
+      black: '#3B4043',
+      red: '#f00',
+      brown: '#5F5538',
+      gray: '#E3E1DA',
+      white: '#F0F3F5',
     },
     secondary: {
-      black: '#032142',
+      black: '#333',
+      gray: '#EFEDE9',
     },
   },
   fontFamily: {

@@ -1,13 +1,13 @@
-import React, { FCX } from 'react';
+import React, { FC } from 'react';
 
 type FooterPropsType = Readonly<{
   children?: never;
 }>;
 
-export const Footer: FCX<FooterPropsType> = ({ className = '' }) => {
+export const Footer: FC<FooterPropsType> = () => {
   return (
     <>
-      <footer className={className}>footer</footer>
+      <footer className="wrapper"></footer>
     </>
   );
 };

@@ -29,6 +29,7 @@ module.exports = {
   },
   rules: {
     // 必要に応じてルールを追加
+    'react/jsx-no-target-blank': 'off',
     'react/prop-types': 'off',
     'react/react-in-jsx-scope': 'off',
     '@typescript-eslint/no-explicit-any': 'off',

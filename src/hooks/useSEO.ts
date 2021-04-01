@@ -20,7 +20,7 @@ export const useSEO: useSEOFunctionType = ({
   page_id,
   title,
   description,
-  image = 'screenshot.png',
+  image = 'common/ogp.png',
   path,
 }) => {
   const ogpImageQuery = useStaticQuery<{
@@ -43,10 +43,7 @@ export const useSEO: useSEOFunctionType = ({
         nodes {
           relativePath
           childImageSharp {
-            gatsbyImageData(
-              layout: FIXED
-              aspectRatio: 1.9047619047619047
-            )
+            gatsbyImageData(aspectRatio: 1.9047619047619047)
           }
         }
       }
@@ -64,8 +61,8 @@ export const useSEO: useSEOFunctionType = ({
   const siteMetaData = useSiteMeta();
   const isTopPage = page_id === '1';
   const pageTitle = isTopPage
-    ? siteMetaData.name
-    : siteMetaData.name + ' | ' + title;
+    ? siteMetaData.name + ' | ' + title
+    : title + ' | ' + siteMetaData.name;
   const pageDescription = description ? description : siteMetaData.description;
   const pagePath = siteMetaData.siteUrl + path;
   const pageOGPImage =

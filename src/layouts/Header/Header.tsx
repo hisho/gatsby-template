@@ -1,13 +1,17 @@
-import React, { FCX } from 'react';
+import React, { FC } from 'react';
+import { MenuButton } from '@src/layouts/Navigation/MenuButton';
 
 type HeaderPropsType = Readonly<{
+  style?: React.CSSProperties;
   children?: never;
 }>;
 
-export const Header: FCX<HeaderPropsType> = ({ className = '' }) => {
+export const Header: FC<HeaderPropsType> = () => {
   return (
     <>
-      <header className={className}>header</header>
+      <header>
+        <MenuButton />
+      </header>
     </>
   );
 };

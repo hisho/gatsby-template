@@ -715,9 +715,6 @@ type SitePluginPluginOptions {
 
 type SiteSiteMetadata {
   description: String
-  lang: String
-  locale: String
-  name: String
   siteUrl: String
   title: String
 }
@@ -1465,9 +1462,6 @@ enum SiteFieldsEnum {
   polyfill
   port
   siteMetadata___description
-  siteMetadata___lang
-  siteMetadata___locale
-  siteMetadata___name
   siteMetadata___siteUrl
   siteMetadata___title
 }
@@ -2183,9 +2177,6 @@ input SitePluginSortInput {
 
 input SiteSiteMetadataFilterInput {
   description: StringQueryOperatorInput
-  lang: StringQueryOperatorInput
-  locale: StringQueryOperatorInput
-  name: StringQueryOperatorInput
   siteUrl: StringQueryOperatorInput
   title: StringQueryOperatorInput
 }
