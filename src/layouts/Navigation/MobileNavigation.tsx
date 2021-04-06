@@ -6,6 +6,7 @@ import {
 } from 'body-scroll-lock';
 import { NavigationContext } from '@src/store';
 import { Fade } from '@material-ui/core';
+import FocusTrap from 'focus-trap-react';
 import * as styles from '@src/layouts/Navigation/mobileNavigation.module.css';
 
 type MobileNavigationPropsType = {
@@ -56,17 +57,19 @@ export const MobileNavigation: FC<MobileNavigationPropsType> = () => {
           id="Navigation"
           aria-hidden={!state.open}
         >
-          <div className="bg-primary-black text-white wrapper-px pt-11 pb-12">
-            なび
-          </div>
+          <FocusTrap active={state.open}>
+            <div>
+              <div className="bg-primary-black text-white wrapper-px pt-11 pb-12">
+                なび
+              </div>
+              <div
+                onClick={handleClose}
+                className={`${styles.overlay}`}
+                aria-hidden={!state.open}
+              />
+            </div>
+          </FocusTrap>
         </nav>
-      </Fade>
-      <Fade in={state.open} timeout={300}>
-        <div
-          onClick={handleClose}
-          className={`${styles.overlay}`}
-          aria-hidden={!state.open}
-        />
       </Fade>
     </>
   );
