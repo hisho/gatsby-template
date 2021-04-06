@@ -5,4 +5,5 @@
   @apply bg-black bg-opacity-50;
   @apply cursor-pointer;
   backdrop-filter: blur(10px);
+  z-index: -1;
 }
