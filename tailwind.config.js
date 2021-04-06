@@ -169,6 +169,7 @@ module.exports = {
         //   marginRight: `auto`,
         // },
         ':root': {
+          '--header-height': `${60 / 16}rem`,
           ...customizeObject(variables.breakpoints, (key, value) => [
             `--breakpoint-${key}`,
             String(value),
