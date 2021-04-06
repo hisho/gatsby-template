@@ -40,6 +40,7 @@ module.exports = {
       keyframes: true,
     },
   },
+  mode: 'jit',
   important: true,
   darkMode: false, // or 'media' or 'class'
   theme: {
