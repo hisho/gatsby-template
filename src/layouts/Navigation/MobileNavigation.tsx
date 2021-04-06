@@ -1,4 +1,4 @@
-import React, { FC, useContext, useEffect, useRef } from 'react';
+import React, { FC, useContext, useEffect, useRef, useCallback } from 'react';
 import {
   disableBodyScroll,
   enableBodyScroll,
@@ -16,9 +16,15 @@ export const MobileNavigation: FC<MobileNavigationPropsType> = () => {
   const { state, dispatch } = useContext(NavigationContext);
   const navElement = useRef<HTMLElement | null>(null);
 
-  const handleCloseClick = () => {
+  const handleClose = useCallback(() => {
     dispatch({ type: 'update', payload: false });
-  };
+  }, []);
+
+  const keydownEvent = useCallback((event: KeyboardEvent) => {
+    const isEscapeKey = event.code === 'Escape' || event.key === 'Escape';
+    if (!isEscapeKey) return;
+    handleClose();
+  }, []);
 
   (() => {
     if (typeof window === 'undefined') return;
@@ -26,9 +32,11 @@ export const MobileNavigation: FC<MobileNavigationPropsType> = () => {
     if (state.open) {
       document.documentElement.style.overflow = 'hidden';
       disableBodyScroll(navElement.current);
+      window.addEventListener('keydown', keydownEvent, false);
     } else {
       document.documentElement.style.overflow = '';
       enableBodyScroll(navElement.current);
+      window.removeEventListener('keydown', keydownEvent, false);
     }
   })();
 
@@ -44,7 +52,7 @@ export const MobileNavigation: FC<MobileNavigationPropsType> = () => {
       <Fade in={state.open} timeout={300}>
         <nav
           ref={navElement}
-          className="sm:hidden fixed top-0 inset-x-0 overflow-y-auto z-40"
+          className="fixed top-0 inset-x-0 overflow-y-auto z-40"
           id="Navigation"
           aria-hidden={!state.open}
         >
@@ -55,8 +63,8 @@ export const MobileNavigation: FC<MobileNavigationPropsType> = () => {
       </Fade>
       <Fade in={state.open} timeout={300}>
         <div
-          onClick={handleCloseClick}
-          className={`sm:hidden ${styles.overlay}`}
+          onClick={handleClose}
+          className={`${styles.overlay}`}
           aria-hidden={!state.open}
         />
       </Fade>
