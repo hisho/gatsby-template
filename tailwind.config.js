@@ -32,15 +32,24 @@ const colorList = Object.fromEntries(
   })
 );
 
+function makeWhiteList($key) {
+  return [
+    $key,
+    ...Object.keys(variables.breakpoints).map((n) => `${n}:${$key}`),
+  ];
+}
+
+const safelist = [...makeWhiteList('block'), ...makeWhiteList('hidden')];
+
 module.exports = {
   purge: {
     content: ['./src/**/*.tsx', './src/**/*.ts'],
     options: {
-      safelist: [],
+      safelist,
       keyframes: true,
     },
   },
-  mode: 'jit',
+  // mode: 'jit',
   important: true,
   darkMode: false, // or 'media' or 'class'
   theme: {
