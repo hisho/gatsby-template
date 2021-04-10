@@ -24,3 +24,7 @@ export const variables = {
     notoserif: ['Noto Serif JP', 'serif'],
   },
 } as const;
+
+export type variablesType = typeof variables;
+
+export type breakpointsNamesType = keyof variablesType['breakpoints'];
