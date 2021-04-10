@@ -60,7 +60,7 @@ export const MobileNavigation: FC<MobileNavigationPropsType> = () => {
           <FocusTrap active={state.open}>
             <div>
               <div className="bg-primary-black text-white wrapper-px pt-11 pb-12">
-                なび
+                <a href="#">ダミー</a>
               </div>
               <div
                 onClick={handleClose}
