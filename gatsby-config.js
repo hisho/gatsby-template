@@ -8,6 +8,12 @@ module.exports = {
   },
   polyfill: false,
   plugins: [
+    {
+      resolve: 'gatsby-plugin-remove-console',
+      options: {
+        exclude: ['error', 'warn'], // <- will be removed all console calls except these
+      },
+    },
     'gatsby-plugin-remove-generator', //remove <meta name="generator" content="Gatsby">
     {
       resolve: 'gatsby-plugin-no-sourcemaps',
