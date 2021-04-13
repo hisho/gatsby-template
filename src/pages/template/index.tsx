@@ -11,7 +11,7 @@ import {
 } from '@material-ui/core';
 
 const IndexPage: FCP = () => {
-  const currentPage = usePageReducer('111111');
+  const currentPage = usePageReducer('0');
 
   return (
     <PageContext.Provider value={currentPage}>
