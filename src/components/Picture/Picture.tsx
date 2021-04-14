@@ -5,12 +5,11 @@ import * as styles from '@src/components/Picture/picture.module.css';
 import { useAnyImage, useVariables } from '@src/hooks';
 import { breakpointsNamesType } from '@src/configs/variables';
 
-type PicturePropsType = {
+type PicturePropsType = Omit<GatsbyImageProps, 'alt' | 'image' | 'className'> & {
   aspect?: boolean;
   breakpoint?: breakpointsNamesType;
   src: string;
   alt?: string;
-  GatsbyImageProps?: Omit<GatsbyImageProps, 'alt' | 'image' | 'className'>;
 };
 
 export const Picture: FCX<PicturePropsType> = ({
@@ -18,7 +17,7 @@ export const Picture: FCX<PicturePropsType> = ({
   aspect = true,
   src,
   alt = '',
-  GatsbyImageProps = {},
+  ...GatsbyImageProps
 }) => {
   const { breakpoints } = useVariables();
   const { anyImage, mobileImage, createArtDirection } = useAnyImage(src);
