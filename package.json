@@ -19,7 +19,14 @@
     "build:type-check": "tsc --noEmit",
     "watch:type-check": "tsc --noEmit -w",
     "build:typed-css": "tcm -c -p \"src/**/*.module.css\" .",
-    "watch:typed-css": "tcm -c -p \"src/**/*.module.css\" . -w"
+    "watch:typed-css": "tcm -c -p \"src/**/*.module.css\" . -w",
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "eslint --ignore-path .gitignore . --fix",
+      "git add"
+    ]
   },
   "dependencies": {
     "@material-ui/core": "^4.11.3",
