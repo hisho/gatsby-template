@@ -5,7 +5,10 @@ import * as styles from '@src/components/Picture/picture.module.css';
 import { useAnyImage, useVariables } from '@src/hooks';
 import { breakpointsNamesType } from '@src/configs/variables';
 
-type PicturePropsType = Omit<GatsbyImageProps, 'alt' | 'image' | 'className'> & {
+type PicturePropsType = Omit<
+  GatsbyImageProps,
+  'alt' | 'image' | 'className'
+> & {
   aspect?: boolean;
   breakpoint?: breakpointsNamesType;
   src: string;
