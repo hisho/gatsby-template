@@ -23,10 +23,6 @@
     "prepare": "husky install"
   },
   "lint-staged": {
-    "*.{ts,tsx}": [
-      "tsc --noEmit",
-      "git add"
-    ],
     "*.{js,jsx,ts,tsx}": [
       "eslint --ignore-path .gitignore . --fix",
       "git add"
