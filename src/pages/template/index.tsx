@@ -1,7 +1,6 @@
 import React, { FCP } from 'react';
 import { Layout, SEO } from '@src/layouts';
 import * as styles from '@src/pages/template/index.module.css';
-import { StaticImage } from 'gatsby-plugin-image';
 import { PageContext } from '@src/store';
 import { usePageReducer } from '@src/hooks';
 import {
@@ -30,12 +29,6 @@ const IndexPage: FCP = () => {
           <section>
             <h2 className={styles.test}>css modules</h2>
             <h2 className={styles.testTest}>css modules kebab to camelcase</h2>
-            <StaticImage
-              aspectRatio={1200 / 630}
-              src="../../images/common/ogp.jpg"
-              alt=""
-              formats={['auto', 'webp']}
-            />
           </section>
         </div>
       </Layout>
