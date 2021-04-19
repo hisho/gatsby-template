@@ -1,8 +1,9 @@
 import { graphql, useStaticQuery } from 'gatsby';
 import { IGatsbyImageData, withArtDirection } from 'gatsby-plugin-image';
+import { imagePaths } from '@src/configs/images';
 
 export type anyImageQueryType = {
-  relativePath: string;
+  relativePath: typeof imagePaths[number];
   childImageSharp: {
     gatsbyImageData: IGatsbyImageData;
   };

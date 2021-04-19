@@ -2,6 +2,7 @@ import React, { FCP } from 'react';
 import { Layout, SEO } from '@src/layouts';
 import { PageContext } from '@src/store';
 import { usePageReducer } from '@src/hooks';
+import { Picture } from '@src/components';
 
 const IndexPage: FCP = () => {
   const currentPage = usePageReducer('1');
@@ -10,6 +11,7 @@ const IndexPage: FCP = () => {
     <PageContext.Provider value={currentPage}>
       <Layout>
         <SEO />
+        <Picture src="screenshot.png" />
       </Layout>
     </PageContext.Provider>
   );

@@ -4,6 +4,7 @@ import { AspectRatio } from '@src/components';
 import * as styles from '@src/components/Picture/picture.module.css';
 import { useAnyImage, useVariables } from '@src/hooks';
 import { breakpointsNamesType } from '@src/configs/variables';
+import { imagePaths } from '@src/configs/images';
 
 type PicturePropsType = Omit<
   GatsbyImageProps,
@@ -11,7 +12,7 @@ type PicturePropsType = Omit<
 > & {
   aspect?: boolean;
   breakpoint?: breakpointsNamesType;
-  src: string;
+  src: typeof imagePaths[number];
   alt?: string;
 };
 
