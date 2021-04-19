@@ -8,62 +8,58 @@
 
 
 .top {
-  margin-top: -0.5625rem;
-  transition: margin-top .25s .25s, transform .25s;
   position: absolute;
   top: 50%;
   left: 50%;
   display: block;
   width: 45%;
   height: 1px;
-  transform: translate(-50%, -50%);
+  margin-top: -.5625rem;
   background: white;
+  transition: margin-top .25s .25s, transform .25s;
+  transform: translate(-50%, -50%);
 }
 
 .middle {
-  transition: background-color .25s;
   position: absolute;
   top: 50%;
   left: 50%;
   display: block;
-  width: 35%;
+  width: 45%;
   height: 1px;
-  transform: translate(-50%, -50%);
-  margin-left: -5%;
   background: white;
+  transition: background-color .25s;
+  transform: translate(-50%, -50%);
 }
 
 .bottom {
-  margin-top: 0.5625rem;
-  transition: margin-top .25s .25s, transform .25s;
   position: absolute;
   top: 50%;
   left: 50%;
   display: block;
-  width: 35%;
+  width: 45%;
   height: 1px;
-  transform: translate(-50%, -50%);
-  margin-left: -5%;
+  margin-top: .5625rem;
   background: white;
+  transition: margin-top .25s .25s, transform .25s;
+  transform: translate(-50%, -50%);
 }
 
 .menu[aria-expanded='true'] {
   .top {
-    transform: translate(-50%, -50%) rotate(45deg);
     margin-top: 0;
     transition: margin-top .25s, transform .25s .25s;
+    transform: translate(-50%, -50%) rotate(45deg);
   }
 
   .middle {
-    transition: background-color .25s;
     background-color: transparent;
+    transition: background-color .25s;
   }
 
   .bottom {
-    transform: translate(-50%, -50%) rotate(-45deg);
     margin-top: 0;
-    margin-left: 0;
-    width: 45%;
-    transition: margin-top .25s, margin-left 0s 0s, transform .25s .25s;
+    transition: margin-top .25s, transform .25s .25s;
+    transform: translate(-50%, -50%) rotate(-45deg);
   }
 }
