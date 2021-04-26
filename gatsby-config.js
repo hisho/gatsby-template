@@ -1,5 +1,8 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 const path = require('path');
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV}`,
+});
 /* eslint-disable @typescript-eslint/no-var-requires */
 
 module.exports = {
@@ -29,7 +32,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-gtag`,
       options: {
-        trackingIds: ['G-LR5XFN93CN'],
+        trackingIds: ['s'],
         pluginConfig: {
           head: true,
         },
