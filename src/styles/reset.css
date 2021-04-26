@@ -50,10 +50,6 @@ svg {
   overflow: hidden;
 }
 
-svg:not(fill), svg:not(stroke) {
-  fill: currentColor;
-}
-
 img, svg, video, canvas {
   height: auto;
 }
@@ -120,14 +116,22 @@ button {
   appearance: none;
 }
 
+/* disabledの時はカーソルをデフォルトにする */
 [disabled] {
   cursor: default;
 }
 
+/* hiddenの時は表示しない */
 [hidden] {
   display: none !important;
 }
 
+/* オートコンプリートの背景色を擬似的に消す */
+input:-webkit-autofill {
+  transition: background-color 5000s ease-in-out 0s !important;
+}
+
+/* 視覚効果を無効にしてるユーザにはアニメーションさせない */
 @media (prefers-reduced-motion: reduce) {
   *:not(#id),
   :not(#id)::before,
@@ -140,6 +144,7 @@ button {
   }
 }
 
+/* mouseとtouchの時にフォーカスを消す */
 [data-whatinput='mouse'] *:focus,
 [data-whatinput='touch'] *:focus {
   outline: none;
