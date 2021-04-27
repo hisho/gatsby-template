@@ -7,6 +7,7 @@ module.exports = {
   gridTemplateColumns: {
     auto: 'auto 1fr',
   },
+  fontFamily: variables.fontFamily,
   spacing: customizeObject(rangeObject(0, 211), (key, value) => [
     key / 2,
     `${(value * 2) / 16}rem`,
