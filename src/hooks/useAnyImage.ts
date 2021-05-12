@@ -21,9 +21,7 @@ type createArtDirectionType = (
   media?: string
 ) => IGatsbyImageData;
 
-type useAnyImageType = (
-  relativePath: string
-) => {
+type useAnyImageType = (relativePath: string) => {
   anyImage?: anyImageQueryType;
   mobileImage?: anyImageQueryType;
   createArtDirection: createArtDirectionType;

@@ -4,13 +4,6 @@ import React from 'react';
 import { PageProps } from 'gatsby';
 
 declare module 'react' {
-  // eslint-disable-next-line @typescript-eslint/ban-types
-  type FCX<P = {}> = React.FunctionComponent<P & { className?: string }>;
-  //gatsbyのpage propsを予めReactのFCに食わせた型
-  type FCP = React.FunctionComponent<
-    PageProps &
-      Readonly<{
-        children?: never;
-      }>
-  >;
+  //gatsbyのpage propsを予めReactのVFCに食わせた型
+  type PFC = React.VoidFunctionComponent<PageProps>;
 }

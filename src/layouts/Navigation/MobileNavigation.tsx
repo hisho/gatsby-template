@@ -1,4 +1,4 @@
-import React, { FC, useContext, useEffect, useRef, useCallback } from 'react';
+import React, { VFC, useContext, useEffect, useRef, useCallback } from 'react';
 import {
   disableBodyScroll,
   enableBodyScroll,
@@ -9,11 +9,7 @@ import { Fade } from '@material-ui/core';
 import FocusTrap from 'focus-trap-react';
 import * as styles from '@src/layouts/Navigation/mobileNavigation.module.css';
 
-type MobileNavigationPropsType = {
-  children?: never;
-};
-
-export const MobileNavigation: FC<MobileNavigationPropsType> = () => {
+export const MobileNavigation: VFC = () => {
   const { state, dispatch } = useContext(NavigationContext);
   const navElement = useRef<HTMLElement | null>(null);
 

@@ -1,10 +1,10 @@
-import React, { FCP } from 'react';
+import React, { PFC } from 'react';
 import { Layout, SEO } from '@src/layouts';
 import { PageContext } from '@src/store';
 import { usePage, usePageReducer } from '@src/hooks';
 import { Link } from 'gatsby';
 
-const IndexPage: FCP = ({ location }) => {
+const IndexPage: PFC = ({ location }) => {
   const currentPage = usePageReducer('999999', (page) => ({
     ...page,
     path: location.pathname,

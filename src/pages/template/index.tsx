@@ -1,4 +1,4 @@
-import React, { FCP } from 'react';
+import React, { PFC } from 'react';
 import { Layout, SEO } from '@src/layouts';
 import * as styles from '@src/pages/template/index.module.css';
 import { PageContext } from '@src/store';
@@ -9,7 +9,7 @@ import {
   AccordionDetails,
 } from '@material-ui/core';
 
-const IndexPage: FCP = () => {
+const IndexPage: PFC = () => {
   const currentPage = usePageReducer('0');
 
   return (

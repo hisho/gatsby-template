@@ -1,12 +1,10 @@
-import React, { FC } from 'react';
+import React, { VFC } from 'react';
 import { MenuButton } from '@src/layouts/Navigation/MenuButton';
+import { CommonPropsType } from '@src/configs';
 
-type HeaderPropsType = Readonly<{
-  style?: React.CSSProperties;
-  children?: never;
-}>;
+type HeaderPropsType = Partial<Pick<CommonPropsType, 'style'>>;
 
-export const Header: FC<HeaderPropsType> = () => {
+export const Header: VFC<HeaderPropsType> = () => {
   return (
     <>
       <header>

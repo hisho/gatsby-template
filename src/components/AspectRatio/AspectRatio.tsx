@@ -1,12 +1,15 @@
-import React, { FCX } from 'react';
+import React, { VFC } from 'react';
 import { percentage } from '@src/helper';
+import { CommonPropsType } from '@src/configs';
 
-type AspectRatioPropsType = {
+type AspectRatioPropsType = Partial<
+  Pick<CommonPropsType, 'className' | 'children'>
+> & {
   width: number;
   height: number;
 };
 
-export const AspectRatio: FCX<AspectRatioPropsType> = ({
+export const AspectRatio: VFC<AspectRatioPropsType> = ({
   className = '',
   children,
   width,

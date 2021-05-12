@@ -1,13 +1,9 @@
-import React, { FC } from 'react';
+import React, { VFC } from 'react';
 
-type FooterPropsType = Readonly<{
-  children?: never;
-}>;
-
-export const Footer: FC<FooterPropsType> = () => {
+export const Footer: VFC = () => {
   return (
     <>
-      <footer className="wrapper"></footer>
+      <footer className="wrapper">footer</footer>
     </>
   );
 };

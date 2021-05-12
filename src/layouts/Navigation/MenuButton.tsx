@@ -1,8 +1,8 @@
-import React, { FC, useContext } from 'react';
+import React, { VFC, useContext } from 'react';
 import * as styles from '@src/layouts/Navigation/menu.module.css';
 import { NavigationContext } from '@src/store';
 
-export const MenuButton: FC = () => {
+export const MenuButton: VFC = () => {
   const { state, dispatch } = useContext(NavigationContext);
 
   const handleOnClick = () => {

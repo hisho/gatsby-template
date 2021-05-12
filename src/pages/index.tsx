@@ -1,10 +1,10 @@
-import React, { FCP } from 'react';
+import React, { PFC } from 'react';
 import { Layout, SEO } from '@src/layouts';
 import { PageContext } from '@src/store';
 import { usePageReducer } from '@src/hooks';
 import { Picture } from '@src/components';
 
-const IndexPage: FCP = () => {
+const IndexPage: PFC = () => {
   const currentPage = usePageReducer('1');
 
   return (
