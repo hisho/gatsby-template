@@ -1,11 +1,12 @@
-import React, { FCX } from 'react';
+import React, { VFC } from 'react';
+import { CommonPropsType } from '@src/configs';
 
-type ExternalLinkPropsType = {
+type ExternalLinkPropsType = Pick<CommonPropsType, 'className'> & {
   href: string;
   children: React.ReactNode;
 };
 
-export const ExternalLink: FCX<ExternalLinkPropsType> = ({
+export const ExternalLink: VFC<ExternalLinkPropsType> = ({
   href,
   className = '',
   children,

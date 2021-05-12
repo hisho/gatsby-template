@@ -1,4 +1,4 @@
-import React, { FCX } from 'react';
+import React, { VFC } from 'react';
 import { GatsbyImage, GatsbyImageProps } from 'gatsby-plugin-image';
 import { AspectRatio } from '@src/components';
 import * as styles from '@src/components/Picture/picture.module.css';
@@ -6,17 +6,15 @@ import { useAnyImage, useVariables } from '@src/hooks';
 import { breakpointsNamesType } from '@src/configs/variables';
 import { imagePaths } from '@src/configs/images';
 
-type PicturePropsType = Omit<
-  GatsbyImageProps,
-  'alt' | 'image' | 'className'
-> & {
-  aspect?: boolean;
-  breakpoint?: breakpointsNamesType;
-  src: typeof imagePaths[number];
-  alt?: string;
-};
+type PicturePropsType = Omit<GatsbyImageProps, 'alt' | 'image' | 'className'> &
+  Readonly<{
+    aspect?: boolean;
+    breakpoint?: breakpointsNamesType;
+    src: typeof imagePaths[number];
+    alt?: string;
+  }>;
 
-export const Picture: FCX<PicturePropsType> = ({
+export const Picture: VFC<PicturePropsType> = ({
   breakpoint = 'sm',
   aspect = true,
   src,

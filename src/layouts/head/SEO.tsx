@@ -1,4 +1,4 @@
-import React, { FC, useContext } from 'react';
+import React, { VFC, useContext } from 'react';
 import { Helmet } from 'react-helmet';
 import { useSEO } from '@src/hooks/useSEO';
 import { PageContext } from '@src/store';
@@ -7,7 +7,7 @@ type SEOPropsType = {
   children?: React.ReactNode;
 };
 
-export const SEO: FC<SEOPropsType> = ({ children }) => {
+export const SEO: VFC<SEOPropsType> = ({ children }) => {
   const { page } = useContext(PageContext);
   const SEO = useSEO(page);
   return (
