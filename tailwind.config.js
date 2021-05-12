@@ -16,7 +16,24 @@ module.exports = {
     // mode: 'jit',
     darkMode: false, // or 'media' or 'class'
     variants: {
-      extend: {},
+      extend: {
+        fill: [
+          'responsive',
+          'group-hover',
+          'group-focus',
+          'focus-within',
+          'hover',
+          'focus',
+        ],
+        stroke: [
+          'responsive',
+          'group-hover',
+          'group-focus',
+          'focus-within',
+          'hover',
+          'focus',
+        ],
+      },
     },
   },
 };
