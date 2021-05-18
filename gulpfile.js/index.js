@@ -9,10 +9,7 @@ exports.image = image;
 exports.tailwindConfigType = tailwindConfigType;
 
 exports.watch = () => {
-  gulp.watch(
-    [`src/images/**/*.png`, `src/images/**/*.jpg`, `src/images/**/*.jpeg`],
-    image
-  );
+  gulp.watch([`src/images/**/*.png`, `src/images/**/*.jpg`], image);
   gulp.watch(
     [
       `src/configs/variables.ts`,

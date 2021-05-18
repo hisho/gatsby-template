@@ -5,8 +5,8 @@ const glob = require('glob');
 /* eslint-disable @typescript-eslint/no-var-requires */
 
 const image = (done) => {
-  const images = glob.sync(`**/*.+(png|jpe?g)`, {
-    ignore: `**/sp_*.+(png|jpe?g)`,
+  const images = glob.sync(`**/*.+(png|jpg)`, {
+    ignore: `**/sp_*.+(png|jpg)`,
     cwd: path.resolve(process.cwd(), 'src/images'),
   });
 
