@@ -21,7 +21,7 @@ module.exports = {
     key,
     `${value / 16}em`,
   ]),
-  fontSize: customizeObject(rangeObject(10, 81, 1), (key, value) => [
+  fontSize: customizeObject(rangeObject(10, 121, 1), (key, value) => [
     key,
     `${+value / 16}rem`,
   ]),
